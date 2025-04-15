@@ -24,4 +24,4 @@ This project is actively maintained by the CodeX095 team. Contributions from tea
 
 ---
 
-Feel free to tweak the tone or stack based on what you’ve us
+Built with ❤️ by the CodeX095 Team.
