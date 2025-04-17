@@ -55,10 +55,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-gray-800/95 backdrop-blur-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink to="/">Home</MobileNavLink>
-            <MobileNavLink to="/about">About</MobileNavLink>
-            <MobileNavLink to="/services">Services</MobileNavLink>
-            <MobileNavLink to="/contact">Contact</MobileNavLink>
+            <MobileNavLink to="/" setIsOpen={setIsOpen}>Home</MobileNavLink>
+            <MobileNavLink to="/about" setIsOpen={setIsOpen}>About</MobileNavLink>
+            <MobileNavLink to="/services" setIsOpen={setIsOpen}>Services</MobileNavLink>
+            <MobileNavLink to="/contact" setIsOpen={setIsOpen}>Contact</MobileNavLink>
             <button className="w-full mt-4 px-4 py-2 bg-cyan-600 rounded-md hover:bg-cyan-700 transition-colors">
               Get Started
             </button>
@@ -81,7 +81,7 @@ const NavLink = ({ to, children }) => (
 );
 
 // Reusable NavLink component for mobile
-const MobileNavLink = ({ to, children }) => (
+const MobileNavLink = ({ to, children, setIsOpen }) => (
   <Link
     to={to}
     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"

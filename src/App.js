@@ -1,10 +1,9 @@
-import React from 'react';
-import Navbar from './Navbar';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import { Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
