@@ -12,6 +12,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
+
+/* Force Chatbot visibility for debugging */
 
 .App-header {
   background-color: #282c34;
