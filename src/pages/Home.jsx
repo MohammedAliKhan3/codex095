@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Hero from "../Components/Hero/Hero";
 import ServicesPreview from "../Components/ServicesPreview/ServicesPreview";
 import LuxuryCTA from "../Components/LuxuryCTA/LuxuryCTA";
-
 const cardData = [
   { title: "AI Design", subtitle: "Smart, adaptive UI/UX" },
   { title: "Automation", subtitle: "Boost efficiency 10x" },
@@ -13,19 +12,21 @@ const cardData = [
   { title: "Cloud Deployments", subtitle: "Fast. Reliable. Global." }
 ];
 
+
+// Change if deployed elsewhere
+
+
 const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState("from-indigo-50 via-purple-50 to-blue-50");
   const [textColor, setTextColor] = useState("text-gray-900");
   const [buttonColor, setButtonColor] = useState("from-violet-600 to-indigo-600");
   const [cardGradient, setCardGradient] = useState("from-indigo-100 to-purple-100");
 
-  // Function to handle scroll and change colors
   const handleScroll = () => {
     const scrollY = window.scrollY;
     const totalHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercentage = (scrollY / totalHeight) * 100;
 
-    // More pronounced color transitions based on scroll percentage
     if (scrollPercentage < 15) {
       setBackgroundColor("from-indigo-50 via-purple-50 to-blue-50");
       setTextColor("text-gray-900");
@@ -263,6 +264,9 @@ const Home = () => {
           <p>© {new Date().getFullYear()} CodeX095. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Chatbot Component */}
+      
     </div>
   );
 };
