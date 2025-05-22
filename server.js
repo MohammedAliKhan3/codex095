@@ -99,6 +99,32 @@ app.post('/chat', async (req, res) => {
   }
 });
 
+// Test endpoint to check Together.xyz API reachability
+app.get('/test-together-api', async (req, res) => {
+  try {
+    const response = await axios.post('https://api.together.xyz/v1/chat/completions', {
+      model: "meta-llama/Llama-Vision-Free",
+      messages: [
+        { role: "system", content: "Say hello" },
+        { role: "user", content: "Test" }
+      ],
+      temperature: 0.7,
+      max_tokens: 10
+    }, {
+      headers: {
+        'Authorization': `Bearer ${config.DEEPSEEK_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      timeout: 5000
+    });
+
+    res.json({ success: true, data: response.data });
+  } catch (error) {
+    console.error('Together.xyz API test error:', error.message);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 // Handle all other routes by serving the React app
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

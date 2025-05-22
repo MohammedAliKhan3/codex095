@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Hero from "../Components/Hero/Hero";
 import ServicesPreview from "../Components/ServicesPreview/ServicesPreview";
